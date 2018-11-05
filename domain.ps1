@@ -31,6 +31,8 @@ $Readhost = Read-Host -Prompt ("y | n ")
 
 # Install the AD Services
 Write-Host -ForegroundColor yellow "What's the domain name going to be?  It should be ad.<your ASU email prefix>.lan" 
+
+# use ad.rkcrane.lan for domain name
 $domainname = Read-Host -Prompt (" ")
 Install-WindowsFeature AD-Domain-Services -IncludeManagementTools | Out-Null
 Install-ADDSForest -DomainName $domainname
